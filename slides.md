@@ -47,8 +47,8 @@ hideInToc: true
 
 # 👤 Hi, I'm Rishit Bansal!
 
+- From Bangalore, India
 - Software Developer @ Dyte (https://dyte.io)
-<!-- - Contributor/Maintainer of CoCo (https://coco.build/) -->
 - I play CTFs with csictf, dytesec
 - 2nd time at Nullcon, participant last year
   - Placed 1st along with dytesec at hardware CTF
@@ -279,7 +279,7 @@ layout: default
 # ACPI Architecture
 
 </div>
-<img src="/acpi.png" class="w-130" />
+<img src="/acpi.png" class="h-100" />
 </div>
 
 ---
@@ -404,6 +404,22 @@ layout: center
 <div class="flex items-center justify-center mt-2">
 <img src= "/wmiacpi.png" class="h-125" />
 </div>
+---
+level: 2
+layout: default
+---
+
+# Chapter 2 Summary
+
+- Learned about the innter workings of two protocols, ACPI and WMI.
+- ACPI specifies "AML" code loaded from BIOS into main memory.
+  - OS (Eg: Linux) can read and execute this to interact with I/O devices.
+- WMI provides a way for user-space communication between services on Windows.
+- WMI-ACPI exposes ACPI methods as WMI Methods
+
+<br /><br /><br />
+
+## Plan: Implement a kernel driver to interface WMI/ACPI on Linux!
 ---
 level: 1
 layout: center
