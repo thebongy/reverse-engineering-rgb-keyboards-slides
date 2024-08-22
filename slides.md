@@ -50,13 +50,16 @@ hideInToc: true
 - From Bangalore, India
 - Software Developer @ Dyte (https://dyte.io)
 - I play CTFs with csictf, dytesec
-- 2nd time at Nullcon, participant last year
-  - Placed 1st along with dytesec at hardware CTF
 
 <br>
 <br>
 
-[https://www.linkedin.com/in/bansal-rishit/](https://www.linkedin.com/in/bansal-rishit/)
+
+<img src="/linkedin.png" class="w-4 mr-2 inline" />
+<a href="https://www.linkedin.com/in/bansal-rishit/">https://www.linkedin.com/in/bansal-rishit/</a>
+
+<img src="/mail.webp" class="w-4 mr-2 inline" />
+<a href="mailto:rishit.bansal0@gmail.com">rishit.bansal0@gmail.com</a>
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
@@ -227,7 +230,7 @@ level: 1
 layout: center
 ---
 
-# Chapter 2: Understanding ACPI and WMI
+# Chapter 2: Understanding the System Protocols!
 
 ---
 level: 1
@@ -235,22 +238,34 @@ layout: default
 image: /8086.png
 ---
 
-# History of I/O device interop
+### Flow #1: How does a keypress toggle the backlight?
 
 <div class="flex justify-center items-center  space-x-8">
 
-<img src="/8086.png" class="w-80" />
+<img src="/stage1.png" style="width:630px;margin-top:10px;" />
 <div>
 
-- On the 8086, I/O devices sent interrupts are sent by:
-  - Sending a pulse on `INTR` pin
-  - Receives interrupt vector on Data pins, and jumps to interrupt execution
+</div>
 
-Disadvantages:
+</div>
+
+---
+level: 1
+layout: default
+image: /8086.png
+---
+
+### Flow #1: What are the disadvantages of this approach?
+<div class="flex items-center justify-center space-x-8 mt-4">
+
+<img src="/ivt.png" style="width:300px;margin-top:10px;" />
+<div>
+
 - No standardization on interrupt numbers, vectors
 - I/O Device API handlers were hardcoded in Bios Firmware
 - OS/Kernel space software has no direct I/O accees, functionality hardcoded in Bios
   - Needed in modern systems (read temp sensors, power management, etc.)
+
 </div>
 
 </div>
@@ -260,14 +275,13 @@ level: 1
 layout: default
 ---
 
-# ACPI (Advanced Configuration and Power Interface)
+### Flow #2: How does the keyboard toggle the backlight? (ACPI)
 
-- Introduced to move I/O API interfaces out of firmware to operating system
-- A new language to write I/O related code
-  - AML (ACPI Machine Language Bytecode)
-  - Interpreted and executed on the operating system!
-- ASL code is stored in firmware on "ACPI tables"
-  - Loaded into main memory during boot time for OS access
+<div class="flex justify-center">
+
+<img src="/stage2.png" style="width:600px;margin-top:10px;" />
+
+</div>
 
 ---
 level: 1
@@ -311,6 +325,14 @@ layout: default
             }
 ...
 ```
+
+---
+level: 1
+layout: center
+---
+## But all this is still on the kernel, how do I toggle the backlight from userspace?
+
+
 ---
 level: 1
 layout: default
